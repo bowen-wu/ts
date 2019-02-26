@@ -1,0 +1,31 @@
+$width: 6em;
+
+@mixin flex($justifyContent: flex-start, $alignItems: flex-start) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+.calculator {
+    display: inline-block;
+    vertical-align: top;
+    .button {
+        width: $width;
+        height: $width;
+        &.text-Clear{
+            width: $width * 3;
+        }
+        &.text-0{
+            width: $width * 2;
+        }
+    }
+    > .output{
+        @include flex(flex-end, flex-end);
+        height: $width;
+        border: 1px solid gray;
+        padding: 0.4em;
+        > span{
+            font-size: 32px;
+        }
+    }
+}

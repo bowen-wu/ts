@@ -1,0 +1,19 @@
+.calculator {
+  display: inline-block;
+  vertical-align: top; }
+  .calculator .button {
+    width: 6em;
+    height: 6em; }
+    .calculator .button.text-Clear {
+      width: 18em; }
+    .calculator .button.text-0 {
+      width: 12em; }
+  .calculator > .output {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 6em;
+    border: 1px solid gray;
+    padding: 0.4em; }
+    .calculator > .output > span {
+      font-size: 32px; }
