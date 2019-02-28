@@ -35,3 +35,37 @@
     // 调用时：
     // 1. 构造 arguments -> argumrnts = {0: 100, 1: 200, length: 2}
 }
+{
+    // 规定 this 类型
+    interface Human {
+        name: string;
+        age: number;
+    }
+
+    function fn(this: Human) {
+        console.log(this);
+    }
+
+    // fn();   // error
+    fn.call({name: 'tom', age: 18});
+}
+{
+    // 重载 -> 一个函数有不同的调用方式
+    // 只支持不同类型的参数的重载，不支持不同长度的参数的重载
+    function add1(n1: number, n2: number); // 第一种调用形式
+    function add1(n1: string, n2: string); // 第二种调用形式
+    function add1(n1, n2) {  // 真正实现 -> 不用来当做类型，只用于实现
+        return n1 + n2;
+    }
+
+    add1(1, 2);
+    add1('tom', 'jack');
+    // add1(1, '2');  // error
+
+
+    // 泛型 VS 重载
+    // 重载可以确定具体的几种类型，泛型很广泛
+}
+{
+    // 类型推论
+}
